@@ -1,0 +1,89 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<p id="yaziyedek" class="yaziyedek" style="white-space: pre-wrap;" display='none'>Yükleniyor ...</p>
+<style>
+.textyoutube{
+ width: 100%;
+ height: 345;
+}
+</style>
+<link rel="stylesheet" type="text/css" href="https://t.ahmetozer.org/l.css">
+<script type="text/javascript" src="https://t.ahmetozer.org/l.js"></script>
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$('a[data-rel^=lightcase]').lightcase();
+		showSequenceInfo: false
+	});
+</script>
+
+<script>
+
+function getQueryVariable(variable)
+{
+var url = document.URL;
+//var query = url.substring(url.indexOf("#")+1);
+var query = window.location.search.substring(1);
+       var vars = query.split("&");
+       for (var i=0;i<vars.length;i++) {
+               var pair = vars[i].split("=");
+               if(pair[0] == variable){return pair[1];}
+       }
+       return(false);
+}
+function replaceURLWithHTMLLinks(text) {
+    var re = /(\(.*?)?\b((l)(https|ftp|file|http):\/\/[-a-z0-9+&@#\/%?=~_()|!:,.;]*[-a-z0-9+&@#\/%=~_()|])/ig;
+    return text.replace(re, function(match, lParens, url) {
+        var rParens = '';
+        lParens = lParens || '';
+        var lParenCounter = /\(/g;
+        while (lParenCounter.exec(lParens)) {
+            var m;
+            if (m = /(.*)(\.\).*)/.exec(url) ||
+                    /(.*)(\).*)/.exec(url)) {
+                url = m[1];
+                rParens = m[2] + rParens;
+            }
+        }
+        return lParens + "<a href='" + url + "'>" + url + "</a>" + rParens;
+    });
+}
+
+function imgengine() {
+
+var div = document.getElementById('yazi');
+div.innerHTML += '</br></br><a href="https://makale.ahmetozer.org/editor.php?file=' + yaziismi + '">Düzenle</a>';
+
+$('#yazi').html(function(index, html){
+    return html.replace(/(http\S+\.(jpg|gif|png|bmp|jpeg|gif))/gim,'<a href="$1" data-rel="lightcase:scrollHor"><img class="jsresim" src="$1" /></a>');
+});
+
+$('#yazi').html(function(i, html) {
+
+    return html.replace(/(?:http:\/\/|https:\/\/)?(?:www\.)?(?:youtube\.com|youtu\.be)\/(?:watch\?v=)?(.+)/g, '<a href="//www.youtube.com/embed/$1?version=3" data-rel="lightcase">https://www.youtube.com/watch?v=$1</a>');
+	
+});
+
+	jQuery(document).ready(function($) {
+		$('a[data-rel^=lightcase]').lightcase();
+	});
+var elm = document.getElementById('yazi');
+elm.innerHTML = replaceURLWithHTMLLinks(elm.innerHTML)
+
+document.body.innerHTML = document.body.innerHTML.replace(/lhttps/g, 'https');
+document.body.innerHTML = document.body.innerHTML.replace(/lhttp/g, 'http');
+
+
+	}
+	
+	//var yaziismi = getQueryVariable('n');
+	yaziismi = location.pathname;
+	//yaziismi = yaziismi.substr(yaziismi.indexOf('/') + 5)
+	var baslikuri = yaziismi.split("/").pop();
+	var baslik = decodeURI(baslikuri);
+	var year = getQueryVariable('y');
+	document.title = baslik +' - Ahmet OZER';
+			$.get("https://makale.ahmetozer.org" + yaziismi + ".txt", function(data) {
+			$( '#yazi' ).html(data);
+			imgengine();
+		});
+		$( ".post-title" ).html(baslik);
+</script>

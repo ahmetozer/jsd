@@ -1,0 +1,5 @@
+Proje klavyemin bozuk olan 4 tuşu ile başladı. Bash dilinde program yazarken değişken olarak bir kod atarken $ işaretini kullanıyoruz fakat bunu yapmak için klavyemi kaldırıp laptobun dahili klavyesinden 4 basmak zor geldi.  Autohotkey programı üzerinde bunu çözebileceğimi gördüm. Daha sonra klavye üzerinde tek tek yeni fonksiyonlar atadım ve şuanda Router projesine bağlı olan odamdaki lamba ve monitörleri birkaç tuş ile açıp kapatabiliyorum. Yazı yazarken yanlış yazmış olduğum kelimeleri de bu sisteme girerek yanlış yazmamın önüne geçmeye çalışıyorum :D.
+
+Güvenlik sebebi ile parolalarım oldukça uzun ve karmaşık. Bu şifreleri klavyeden girmek uzun sürdüğünden steam ve benzeri sistemlere sadece birkaç kelime oldukça kolay bir şekilde parola girmeyi hızlandırdım. Örnek steam üzerinde parola girmek istedimde klavyeden pwst yazmam yeterli oluyor. pwst yazında script otomatik olarak steam parolasını giriyor.
+
+Proje şuan için son kullanıcıları yayımlanmış değil . İleride bir arayüz hazırlanarak kullanıcıların kullanabileceği bir sistem haline getirilebilinir.

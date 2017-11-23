@@ -1,0 +1,51 @@
+Proje geliştirirken bazen kullanıcılar bilgisayarlar arasında bağlantı kurmak isteyebiliyor. En basitinden yerel ağda web sitesi geliştirirken diğer kullanıcı bunu test edemiyor.
+
+Ülkemizde ipv6 alt yapısı da yok ve bazen modem üzerinden port yönlendirme de yapamıyoruz çünkü CGNAT olarak hizmet alınan durumlar olabiliyor.
+
+Bu hizmet ile berber program kurulduktan sonra kullanıcılar bir yerel ağ bağlantısı sağlamış oluyor .
+
+Sunucu Kurulumu
+Sunucu olarak kullanacak kişiler bir domain adresine ihtiyaç duyduğunda lhttps://intranet.ahmetozer.org adresi üzerinden domain alabilirler.
+
+
+https://youtu.be/DvY4V_8au5Y
+ 
+
+https://ahmetozer.org/wp-content/uploads/2017/06/Screenshot_1.png
+
+Kayıt başarıyla tamamlandıktan sonra domain paneli üzerinden indirdikleri anahtarı %programfiles%\inet klasörünün içine atarak aktive edebilirler.
+
+Windows için programı indir lhttps://intranet.ahmetozer.org/intranetsetup.exe
+a
+
+<h2>Linux için kurulumu</h2>
+
+Program bash temelli ve openvpn ihtiyaç duymaktadır. Debian veya Ubuntu dağıtımlarından birini kullanıyorsanız otomatik olarak openvpn yüklenecektir.
+
+Kurulum
+<pre>
+wget https://intranet.ahmetozer.org/Unix/inet.sh
+
+chmod 755 inet.sh
+
+./inet.sh
+</pre>
+Domain anahtarı yüklemek için <code> ./inet.sh anahtar yukle domainanahtarınız </code> komutunu kullanın.
+
+Domain anahtarını kaldırmak için <code> ./inet.sh anahtar kaldir </code> komutunu kullanın.
+
+ 
+
+ 
+
+<h2>Sisteme Erişim</h2>
+
+Kullandığınız sistem web tabanlı ise (Örnek : WordPress , Deluge Web, Transmission Web) artık diğer cihazlara inet kurmanıza gerek yok.
+
+Örneğin bilgisayarınıza wordpress kurdunuz.  Normalde wordpress sitenize gireceğiniz cihazlarada inet kurmanız gerekiyordu fakat artık buna ihtiyaç yok.
+
+Siteniz http ise domainadınız.cgnat.ml eğer https kullanıyor ise domainadınız.cgnat.cf adresini kullanarak dışarıdan erişim gerçekleştirebilirsiniz.
+
+Deluge web arayüzü için domainadınız.cgnat.ml:8112 adresini Transmission Web için ise domainadınız.cgnat.ml:9091 adresini kullanabilirsiniz.
+
+Uzaktan erişim yapılmasını istediğin web tabanlı sistemler olursa twitter üzerinden bildiriniz. 

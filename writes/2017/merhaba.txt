@@ -1,0 +1,57 @@
+	Bu içerik sunucudan Javascript ile çekilmiştir.
+asdfasdfasdf
+	Bu şeklilde veri çekimi sunucu üzerindeki kaynak tüketimini azaltamakta. Azalan kaynak tüketimi sayfa açılış hızının artmasına ve aynı anda sayfaya girebilecek kullanıcı miktarını da arttırmaktadır.
+Bu yazı aslında bir TXT belgesidir. 
+Aşağıda aslında direk resim adresleri var fakat tarayıcı üzerinde bu adres otomatik olarak img formatına çeviriliyor.
+
+https://images.pexels.com/photos/356830/pexels-photo-356830.jpeg
+
+url linklere çevirme linklerin başına l konulması yeterlidir
+
+lhttps://github.com/stephband/jquery.event.move/blob/master/js/jquery.event.move.js
+Kütüphane Test
+Youtube url testi
+https://www.youtube.com/watch?v=4qLrtCORVoY
+
+Terminal kod testi
+<code>
+#!/bin/bash
+
+INTERVAL="1"  # update interval in seconds
+
+if [ -z "$1" ]; then
+        echo
+        echo usage: $0 [network-interface]
+        echo
+        echo e.g. $0 eth0
+        echo
+        exit
+fi
+
+IF=$1
+
+while true
+do
+        R1=`cat /sys/class/net/$1/statistics/rx_bytes`
+        T1=`cat /sys/class/net/$1/statistics/tx_bytes`
+        sleep $INTERVAL
+        R2=`cat /sys/class/net/$1/statistics/rx_bytes`
+        T2=`cat /sys/class/net/$1/statistics/tx_bytes`
+        TBPS=`expr $T2 - $T1`
+        RBPS=`expr $R2 - $R1`
+        TKBPS=`expr $TBPS / 1024`
+        RKBPS=`expr $RBPS / 1024`
+        echo "TX $1: $TKBPS kB/s RX $1: $RKBPS kB/s"
+done
+
+</code>
+
+Diğer örnek resimler . Lightbox desteği de mevcutur.
+Resimler yüksek çözünürlüktedir, yavaş yükleniyorsa internetiniz yavaş demektir. 
+
+https://images.pexels.com/photos/173313/pexels-photo-173313.jpeg
+
+Siteyi ziyaret eden kullanıcılar herhangi bir dinamik içerik çalıştırmamaktadır. Tüm yazılar klasör ve txt dosyası şeklinde diskte depolanmakta. Kısacası biz buna google mantığı diyebiliriz.
+Yarınki iş soldaki menüleri çekmek olacak. Çok düşük özellikli sistemlerde bile bu site rahatla barınabilir.
+
+https://images.pexels.com/photos/174662/pexels-photo-174662.jpeg

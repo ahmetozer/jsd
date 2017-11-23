@@ -1,0 +1,39 @@
+Sunucu işlerine raspberrypi kullanarak başladım. Daha sonra DigitalOcean firmasının indirim kuponları ve öğrencilere verdiği destek sayesinde uzaktaki bir sunucunun nasıl yönetileceğini öğrendim. İlk başlarda internette hazır olan rehberleri aynısını uyguluyordum . Neyin ne ne işe yaradığını bilmeden kullanıyordum yani . Daha sonra işimi kolaylaştırsın diye hazır panel sistemleri kullanmak istedim ama onlar hem gereksiz yere sistem kaynakları tükettiğini hemde stabil olmadıklarını görünce kullanmayı bıraktım.
+
+Sistemde oluşan hatalar düzeltmek ile uğraşmadan ve sürekli daha iyisi yapma merakından linux ve sunucu işinde azda olsa tecrübe sahibi oldum. Saldırılardan nasıl korunucağını , saldırı olmadan önce hangi önlemleri almak gerektiğini düşünerek sistemler kurmaya çalıştım.
+
+Sunucu kurmadan önce bir plan yapılmalı ve ileride karşılaşabileceğiniz sorunlar ile ilgili önceden araştırma yapmak işi kolaylaştırıyor.  Kısacası her sürüm ve yenilik için önceden kendinize sorunsuz bir rehber hazırlayın bunu 0 dan test edin.
+
+ 
+
+server 1 commercial
+
+Dijitaller.com ihtiyaçları için alınmıştır. Almanya
+
+server 2
+
+Ev ağı ve çeşitli uygulamaları test etmede kullanılır.
+
+server 3
+
+website analizleri için kullanılır
+
+ 
+
+Sunucular ve servisler için kullandığım ipv4 haritası
+
+<iframe src="https://www.google.com/maps/d/embed?mid=1hrp-M6IgG3FM5SRUL7NBNy2GMs8" width="640" height="480"></iframe>
+
+
+Amerikan Firması olan HE.net destekleri ile /48 blok ipv6 adresi alınmıştır. 65,536 Ağ kurma kapasitesine ulaşıldı. Toplam ipv6 adresi 1208925819614629174706176 adettir.HE.net sayesinde Google , Facebook ve diğer teknoloji firmalarının çoğuna kendi fiber ağı ile bağlıdır.
+
+https://ahmetozer.org/wp-content/uploads/2016/10/Fiber-Ag.jpg
+
+Ağa katılan tüm kullanıcılara ipv6 desteği eklendi.
+
+Tunnel üzerinden root dns bağlantıları aktif edildi .
+
+Dns isteklerinde ipv4 desteği olmayan sunuculara NAT64 ile ipv6 adresi eklendi.
+
+#mayıs 2017
+tüm sunucular için kontrol edilebilir firewall yazılımı yazılıyor.

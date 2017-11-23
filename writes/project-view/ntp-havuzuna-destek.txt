@@ -1,0 +1,3 @@
+Saati sadece insanlar değil bilgisayarlar’da sorarlar . IOT için kullandığım cihazlar çok fazla saat sorgusu yaptığı için NTP sunucusu kurdum. Daha sonrasında bu sunucunun kullanımını Avrupa ve Türkiyenin kullanımına açtım. Günümüz itibari ile Türkiye genelinde ntp isteklerinin bir kısmını sistemim karşılamaya başladı.
+
+Anlık olarak gelen sorgu miktarı 30 ile 3000 arası günün belli saatlerinde değişmektedir.

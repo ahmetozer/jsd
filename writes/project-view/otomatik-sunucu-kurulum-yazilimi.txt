@@ -1,0 +1,5 @@
+Sürekli olarak sunucu kurulumu testleri yapan birisi olunca artık elle sunucu kurmaktan yoruldum ve böyle bir işe giriştim. Proje bash tabanlı olarak çalışıyor .
+
+https://youtu.be/fbmuDwi3Kf4
+
+Proje videoda ki versiyondan şuanda daha gelişmiş haldedir. Rehberi yazıldıktan sonra halka açık kullanıma sunulacaktır.

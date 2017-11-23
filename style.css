@@ -1,0 +1,54 @@
+img {
+	    max-width: 100%;
+    height: auto;
+}
+
+.textyoutube{
+ width: 100%;
+ height: 345;
+}
+.videodiv{
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  margin: 1px;
+}
+.playbutton {
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    content: "\f01d";
+    font-family: FontAwesome;
+    font-size: 150px;
+    color: #fff;
+    opacity: .9;
+    text-shadow: 0px 0px 30px rgba(0, 0, 0, 1);
+    z-index: 5;
+  }
+  .playbutton:hover {
+    color: #eee;
+  }
+  .post-title {
+	  text-shadow: 0px 0px 30px rgba(0, 0, 0, 1);
+  }
+  
+  code {
+	  margin: 0px 0px;
+	  text-align: left;
+  }
+  #jstextengine {
+  white-space: pre-wrap;
+  font-family: 'Roboto', 'Helvetica', sans-serif;
+    max-width: 700px;
+    margin: 16px auto;
+    font-size: 16px;
+    line-height: 28px;
+	text-align: left;
+  }
+  .jsdshadow20 {
+	  text-shadow: 0px 0px 20px rgba(0, 0, 0, 1);
+  }
+  
+  

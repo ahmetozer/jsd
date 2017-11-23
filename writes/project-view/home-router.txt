@@ -1,0 +1,109 @@
+26.03.2017 Sistem planlaması ve sonuçlar <a><code>https://ahmetozer.org/urouters.html</code></a> üzerinde yazılıyor.
+
+İlk olarak projenin başlangıcı Raspberry pi üzerinde kurmuş olduğum hotspot ile oldu. Daha sonra modem üzerinde de aynı değişiklikleri yapmak istedim ama modem üzerinde bulunan firmware ve donanım desteği buna izin vermiyordu. İlerleyen zamanlarda Banana pi ile devam ettim.
+
+Tplink 722n kablosuz verici ile projeyi geliştirdim fakat geliştirirken usb wifi vericisini elimde bulunan mıknatısın lehim yerlerine yapışmasıyla alıcı yandı.Airties modemi bağlantı noktası olarak kullandım ve ağ geçidi olarak Bpi (Banana pi) ayarladım. Yerel dns sunucusu, yerel proxy gibi özellikler ekledim. Daha sonrasında yurtdışında bulunan sunucuları da kullanarak çıkış noktalarını değiştirdim. Sisteme dahili reklam engelleme özelliği ile eve gelen misafirler reklamsız internet keyifi yaşadılar 😀
+
+Bulunduğum bölgeye VDSL2 desteği gelmesi ile beraber Airties 5443 modemin yerin TP-Link Archer VR 200 modem aldı.
+
+Şuanda VR200 modemin bütün yazılımsal özellikleri kapalı. Bunu yapma sebebim Bpi de bulunan programların Modem ile çakışmaması (DHCP).
+
+Şuanda sistem şu şekilde çalışıyor;
+
+https://ahmetozer.org/wp-content/uploads/2016/10/ba%C4%9Flant%C4%B1.png
+
+Telekomdan gelen telefon kablosu modeme takılı.
+
+Modemde bridge (köprü) modunda ve yerel ağda oluşan pppoe isteklerini telekoma gönderiyor.
+
+Banana pi de pppoe istemcisi bulunuyor . Servis sağlayıcısının vermiş olduğu kullanıcı adı ve şifre bilgilerini Bpi giriyoruz. Bridge modu sayesinde ip adresini modem değil yerel ağımızda bulunan Banana pi alıyor.
+
+Banana pi de bulunan Firewall  telekom bağlantısı üzerinden 4 farklı ip dışında gelen bütün istekleri engelliyor.
+
+telekom üzerinden hollanda da bulunan HE** nin ipv6 sunucusuna bağlantı kuruluyor.
+
+ipv6 bağlantısı üzerinden Almanya ve Amerika’da bulunan vps sunucuları ile openvpn ile bağlanılıyor ve şifreli yerel ağ kurulmuş oluyor.
+
+Evdeki cihazlar modemde bulunan Wifi yada ethernet ile bağlandığında istekler Bpi ye gidiyor ve DHCP sonucu ile bağlanan cihaza ipv4 ve ipv6 adresi veriliyor.
+
+Bu sonuçta varsayılan ağ geçidi bilgisi ve DNS sunucusu olarak Bpi nin adresi veriliyor . DNS sunucunun yerel ağda bulunması ile istekler daha hızlı cevap verilebiliyor. 6 farklı DNS sunucusuna bağlı olan evdeki sunucu sonuç bulunaması halinde diğerlerini deniyor.
+
+Özellikler
+PPPOE istemcisi.
+Normal ve reklam engelleme destekli Proxy sunucuları.
+DNS cacheleme ve dns üzerinden reklam engelleme.
+Rygel ile Multimedya paylaşımı.
+Samba ile NAS sistemi. Ağ üzerinden dosya transferi.
+Openvpn ile diğer sunucular ile yerel ağ oluşturma.
+Netdata ile ağ durum takibi ve sistem durumu.
+Web Sunucu
+ipv4 üzerinden ipv6 iletişimi.
+ipv4 ve ipv6 destekli DHCP sunucusu.
+Bağlantı sağlanan ip adreslerini görüntüleme.
+İp adresi engelleme.
+Yerel ağdan internete gönderilecek bütün istekleri kendine yönlendirme.
+Harekete Duyarlı Güvenlik Kamerası.
+Kumanda ile sistem kontrolü (yeniden başlat, bağlantı sıfırla, DNS ve Ram önbelleği temizleme ….).
+ Günlük olarak gelen giden isteklerin loglama özelliği.   Loglar
+Kumanda ,WEB Arayüzü ve Ses ile odadaki elektronik cihazların elektronik bağlantılarını kontrol etme
+Ağ kontrol yazılımı ile bağlantı koptuğunda sesli uyarı ve otomatik bağlantı yeniden başlatılması.
+Servisler sıkıntı olduğunda otomatik olarak başlatılıyor.
+2sn Sistem kontrolü 8 Saniye havadurumu ve saat gösterilecek şekilde 2 pencere arasında sürekli değişiyor.
+pop-ekran uygulaması ile yeni bir TTY başlatılabilir ve pop-ekran [TTYnumber] kodu ile sisteme otomatik giriş sağlanır
+NAT64 ile beraber ipv4 bağlantılarını ipv6 üzerinden aktarma ( Go6 üzerinden ve HE net aracılığı ile ipv6)
+**HE = Internet Backbone and Colocation Provider
+
+https://ahmetozer.org/wp-content/uploads/2016/10/Screenshot_6.jpg
+
+
+Kasım 2016
+Eski sistemin yedeği alındı. Debian gpu sürücüleri bulunan imaj yüklendi. Güncelleme ile Ubuntu 16.10 Sürümüne yükseltildi. Eski sistemin yedeğinden programlar geri yüklendi.
+
+Eklenenler
+Sistem kontrol uygulaması yazıldı.
+Mopidy sorunları düzeltilerek sisteme yüklendi .
+Pulseaudio ile kablosuz yüksek kalitede ses aktarımı.
+Kumandadan Spotify sunucusunun kontrolü ve ses çıkışının değişimi (Bilgisayar, monitör yada salonda bulunan chip)
+Sistem sesli olarak Türkçe konuşarak oluşan sorunları bildirmesi ve otomatik çözüm eklendi.
+Telefon ve benzeri aygıtları usb ile bağlandığında ağ üzerinden (web yada nas) dosya paylaşımı eklendi.
+
+
+https://ahmetozer.org/wp-content/uploads/2016/10/musicbox_webclient-300x141.png
+https://ahmetozer.org/wp-content/uploads/2016/10/72c2eda310231d9-300x225.jpg
+https://ahmetozer.org/wp-content/uploads/2016/10/Ekran-G%C3%B6r%C3%BCnt%C3%BCs%C3%BC-117-300x169.png
+https://ahmetozer.org/wp-content/uploads/2016/10/Ekran-G%C3%B6r%C3%BCnt%C3%BCs%C3%BC-120-300x169.png
+https://ahmetozer.org/wp-content/uploads/2016/10/Ekran-G%C3%B6r%C3%BCnt%C3%BCs%C3%BC-121-300x169.png
+https://ahmetozer.org/wp-content/uploads/2016/10/Screenshot_2016-12-19_17-46-16-300x240.png
+
+Şubat 2017
+Root dns serverlar ile bağlantı oluşturuldu ve üzerinde private dns server bulunmakta. DNS64 ve NAT64 desteği eklendi.
+
+ipv4 bağlantılarda artık ipv6 üzerinden iletişim kurmakta
+bütün dns sunucuları kendi kurduğum sunuculara zorunlu olarak yönlendirildi. Böylece ağıma katılan kullanıcı hangi dns sunucusunu kullanırsa kullansın benim dns sunucumu kullanmış oluyor. Bu Türkiye de bulunan servis sağlayıcılarının yaptığı dns kirliliğini engelliyor ve 1 ms içinde cevap vererek normal e göre çok hızlı cevap vermiş oluyor.
+
+uln2003 ile Gpio dan çıkan bağlantıların topraklanması sağlandı. Odanın lambası ve Sistem Kontrol ekranına Röle ile bağlantı eklendi. Kumanda üzerinden monitör ve Oda lambasının kontrolü sağlandı.
+
+Gereksiz kaynak kullanımını azaltmak için X masaüstü ortamı kapatıldı. Onun yerine kumandadan ekran değiştirilebilen ve screen ile bağlantı kurulabilen teletext tarzı sistem getirildi.
+
+Teletext tarzı sisteme hava durumu entegre edildi. Otomatik döngü sağlandı.
+
+2. Banana Pi ye Amazon Alexa port edildi ve kuruldu. Alexa ile sistem Entegrasyonu devam ediyor. Şuanda konuşarak odada bulunan sistemler kontrol edilebiliyor.
+
+2 adet 3A 5V adaptör ile sistem güç kaynağı yenilenmiş oldu. (At arpayla Elektrik Wattla 🙂 )
+
+1,5 tl ye yaptığım 2000 lumen 2200 kelvin lamba sisteme bağlandı.
+
+Mart 2017
+Sistem için yazılmış programlar kendine özel ayar dosyası ve dosya konumunda depolanması için tekrardan düzenleniyor ve geliştiriliyor.
+
+https://ahmetozer.org/wp-content/uploads/2016/10/Screenshot_1.jpg
+
+Haziran 2017
+İot sistemi artık Banana pi üzerinden olan GPIO çıkışları ile değil Arduino kontrol ediliyor. Aradaki uln2003 yerine arduino geçti. Sistem için kendi gpio yazılımımız yazıldı.
+
+Loadbalancer sistemi kuruldu ve test edildi. lhttp://forum.donanimhaber.com/m_126510081/tm.htm
+
+Eylül 2017
+Materyal tasarım ile Web arayüzü hazırlanıyor.
+
+https://ahmetozer.org/wp-content/uploads/2016/10/Screenshot_2.png

@@ -1,0 +1,17 @@
+1 Mayıs 2017 ile beraber akk düzenlemesi devreye girdi ve kullanıcıların 2-8 arası yaptığı indirme kotaya yansımıyor. Kullanıcıların geceliğin saat 2 de otomatik açılmasını sağlıyacağı bir sistem göremediğimden  ben de bat ile bir script olarak yazdım.
+
+https://youtu.be/lOuYO9HGIRM
+
+Serhat Yücel programı beğendi fakat son kullanıcıya yönelik olmadığı için programın daha kullanıcı dostu yeni versiyonunu C# ile yazdı .
+
+Serhat Yücel tarafından hazırlanan son versiyona https://www.dijitaller.com/2-8-asistan/ üzerinden ulaşabilirsiniz.
+
+ 
+
+Proje fikir sahibi = Ahmet ÖZER
+
+Projenin bat versiyonunu yazan = Ahmet ÖZER
+
+Projenin şuanda yeni versiyonunu geliştiren ve yazan = Serhat Yücel
+
+Proje resim kaynaklarını üreten = Hüseyin Emre Girgin

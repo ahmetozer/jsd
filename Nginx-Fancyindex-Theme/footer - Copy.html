@@ -1,0 +1,19 @@
+  <script>
+var anchors = document.getElementsByTagName("a");
+
+for (var i = 0; i < anchors.length; i++) {
+	var adres = anchors[i].href;
+	//adres = adres.substr(adres.indexOf('.') + 15)
+	adres = adres.slice(29, -4);
+    anchors[i].href = "https://ahmetozer.org/yazi/" + adres
+	
+}
+  </script>
+</body>
+</html>
+<!--
+footer.html
+© 2015-17, Lilian Besson (Naereen) and contributors,
+open-sourced under the MIT License, https://lbesson.mit-license.org/
+hosted on GitHub, https://GitHub.com/Naereen/Nginx-Fancyindex-Theme
+-->
