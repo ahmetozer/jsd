@@ -1,2 +1,2 @@
 # jsd
-txt based database cms
+TXT file based web pages.
